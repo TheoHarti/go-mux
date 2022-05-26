@@ -35,7 +35,9 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Get needed go dependencies
-        run: go get -v -t -d ./...
+        run: |
+          go get -v -t -d github.com/gorilla/mux 
+          go get -v -t -d github.com/lib/pq
 
     - name: Build project
       run: go build -v .
