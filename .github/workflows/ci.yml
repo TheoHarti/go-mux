@@ -6,7 +6,7 @@ on:
 
 jobs:
   buildAndTest:
-    name: Test
+    name: Build and Test
     runs-on: ubuntu-latest
 
     services:
@@ -46,6 +46,7 @@ jobs:
       run: go test -v .
   
   sonarcloud:
+    name: Run Sonarcloud static analysis
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
